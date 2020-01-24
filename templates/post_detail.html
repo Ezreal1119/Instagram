@@ -64,7 +64,6 @@
             </section>
         </div>
     </div>
-    Post time: {{object.kk}}
     {% if user == object.author %}
         <a class="edit-desktop" href="{% url 'post_update' object.pk %}">
             <button type="button" class="btn btn-primary">Edit Picture</button>
@@ -72,8 +71,8 @@
         <a class="edit-desktop" href="{% url 'post_delete' object.pk %}">
             <button type="button" class="btn btn-danger">Delete Picture</button>
         </a>
-        Post time: {{object.kk}}
     {% endif %}
+    Post time: {{object.kk}}
 </div>
 
 {% endblock content %}
