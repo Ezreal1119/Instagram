@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Edit Post</h1>
+
+<form action = "" method = "post" enctyp = "multipart/form-date">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="{% url 'post_detail' object.pk %}">
+        <button type="button" class="btn btn-danger">Cancel</button>
+    </a>
+</form>
+
+{% endblock content %}

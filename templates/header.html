@@ -1,0 +1,73 @@
+{% load custom_tags %}
+{% load static %}
+
+<div class="navbar navbar-default navbar-fixed-top" id="main-nav">
+    <div class="container desktop">
+        <ul class="nav navbar-nav navbar-left">
+            {% if request.user.is_authenticated %}
+                {% if user.profile_pic %}
+                    <li>
+                        <div class="navbar-header">
+                            <a href="{% url 'user_detail' user.pk%}" >
+                                <img class="picture-circle--medium" src="/{{user.profile_pic}}">
+                            </a>
+                        </div>
+                    </li>
+                {% endif %}
+            {% else %}
+                <li>
+                    <div class="navbar-header">
+                        <a href="{% url 'login' %}" >
+                            <img class="picture-circle--medium" src="{% static 'images/hehe.jpg' %}">
+                        </a>
+                    </div>
+                </li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <li>
+                <div class="navbar-header" >
+                    <a href="{% url 'posts' %}" class="navbar-brand">
+                        <div class="txt8">
+                            Spy FREE in Three Mile Shop
+                        </div>
+                    </a>
+                </div>
+            </li>
+            {% else %}
+            <li>
+                <div class="navbar-header" >
+                    <a href="{% url 'login' %}" >
+                        <div class="txt8">
+                            Spy FREE in Three Mile Shop
+                        </div>
+                    </a>
+                </div>
+            </li>
+            {% endif %}
+        </ul>
+
+        <div id="navbar-main">
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li>
+                      <a href="{% url 'posts' %}">
+                        <i class="fa fa-home {% active 'posts' %}" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li><a href="{% url 'explore' %}"><i class="fa fa-search {% active 'explore' %}" aria-hidden="true"></i></a></li>
+                    <li><a href="{% url 'post_create' %}"><i class="fa fa-plus {% active 'post_create' %}" aria-hidden="true"></i></a></li>
+                    <li><a href="{% url 'user_detail' request.user.pk %}"><i class="fa fa-user {% aactive 'user_detail' request.user.pk%}" aria-hidden="true"></i></a></li>
+                    <li><a href="{% url 'users_view' %}"><i class="fa fa-globe {% active 'users_view' %}" aria-hidden="true"></i></a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out {% active 'logout' %}" aria-hidden="true"></i></a></li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">login</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'signup' %}">signup</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>New Post</h1>
+
+<form action = "" method = "post" enctype = "multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="{% url 'posts' %}">
+        <button type="button" class="btn btn-danger">Cancel</button>
+    </a>
+</form>
+
+{% endblock content %}

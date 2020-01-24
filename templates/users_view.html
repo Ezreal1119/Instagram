@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load custom_tags %}
+
+{% block content %}
+
+<div class="cards-listing">
+    {% for i in object_list %}
+        <div class="row">
+            <div class="col-xs-4 left">
+                {% if i.profile_pic %}
+                <a href="{% url 'user_detail' i.pk %}" style="text-decoration: none; color: black;">
+                    <img class="picture-circle" src="http://{{ request.META.HTTP_HOST }}/{{i.profile_pic.url}}">
+                </a>    
+                {% endif %}
+            </div>
+            <div class="col-xs-8 right">
+                <div class="name-buttons">
+                    <a href="{% url 'user_detail' i.pk %}" style="text-decoration: none; color: black;">
+                    <h1 class="username">{{ i.nickname }}</h1>
+                    </a>
+                    {% if user == i %}
+                        <a class="edit-desktop" href="{% url 'edit_profile' i.pk %}">
+                            <button type="button" class="btn btn-info">Edit Profile</button>
+                        </a>
+                    {% else %}
+                        {% is_following user i as following %}
+                        <div class="follow-toggle__container">
+                            <a href="{% url 'users_view' %}">
+                                <button class="btn btn-primary {% if not following %}follow-user{% else %}unfollow-user{% endif %}" id="{{ i.pk }}">
+                                    {% if following %}
+                                        Unfollow
+                                    {% else %}
+                                        Follow
+                                    {% endif %}
+                                </button>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div>
+                    <ul class="stats">
+                        <div class="col-xs-4"><a href="{% url 'user_detail' i.pk %}" style="text-decoration: none; color: black;"><li class="stats__count"><span>{{ i.my_posts.count }}</span><br> posts</li></a></div>
+                        <div class="col-xs-4"><a href="{% url 'followed_view' i.pk %}" style="text-decoration: none; color: black;"><li class="stats__count"><span class="follower_count" id="follower_id">{{ i.get_followers_int }}</span><br> followers</li></a></div>
+                        <div class="col-xs-4"><a href="{% url 'following_view' i.pk %}" style="text-decoration: none; color: black;"><li class="stats__count"><span>{{ i.get_connections_int }}</span><br> following</li></a></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

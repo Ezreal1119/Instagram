@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	{% load custom_tags %}
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/my_style.css' %}">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/font-awesome-4.6.3/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/my_style.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	{% load static %}
+	{% load custom_tags %}
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({% static 'images/kkp.jpg' %});">
+		<!-- <div class="container-login100" style="background-image: {% static 'images/img-01.jpg' %};"> -->
+			<div class="wrap-login100 p-t-190 p-b-30" >
+					{% csrf_token %}
+					<div class="login100-form-avatar">
+						<img src="{% static 'images/hehe.jpg' %}" alt="AVATAR">
+					</div>
+
+					<span class="login100-form-title p-t-20 p-b-45">
+						<div class="txt4">
+							是否内鬼？
+						</div>
+                    </span>
+                    
+					<div class="container-login100-form-btn p-t-10 follow-toggle__container" type = "submit">
+                        <a href="http://www.ccyl.org.cn/">
+						    <button class="login100-form-btn follow-user" id="{{ user.pk }}">
+                                我是内鬼
+                            </button>
+                        </a>
+					</div>
+
+					<div class="container-login100-form-btn text-center w-full p-t-25 p-b-230 follow-toggle__container">
+						<a href="{% url 'posts' %}" class="txt3">
+							<button class="login100-form-btn follow-user" id="{{ user.pk }}">
+								我是个锤子内鬼
+							</button>
+						</a>
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/ajax-csrf-auth.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>
