@@ -1,7 +1,0 @@
-@mixin grey-anchor() {
-  color: $grey-text;
-  &:hover {
-    color: $grey-text-hover;
-    text-decoration: none;
-  }
-}
