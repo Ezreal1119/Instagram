@@ -1,0 +1,46 @@
+.txt2 {
+    font-family: cursive;
+    font-size: 25px;
+    color: greenyellow;
+    line-height: 1.4;
+  }
+
+.txt3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 25px;
+  color: #cccccc;
+  line-height: 1.4;
+}
+
+.txt4 {
+  font-family: Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
+  font-style: italic;
+  font-size: 40px;
+  color: #f8bfbf;
+  line-height: 1.4;
+}
+
+.txt5 {
+  font-family: "楷体", "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
+  font-style: italic;
+  font-size: 25px;
+  color: #c24edf;
+}
+
+.txt6 {
+  font-family: "Times New Roman";
+  font-size: 15px;
+}
+
+.txt7 {
+  font-family: "楷体", cursive;
+  font-size: 15px;
+}
+
+.txt8 {
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 25px;
+  color: #225cc7;
+}
